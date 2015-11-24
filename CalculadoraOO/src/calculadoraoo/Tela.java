@@ -10,28 +10,14 @@ import java.io.IOException;
 
 /**
  *
- * @author lgvalentin
+ * @author WaGjUb
  */
-public class Tela {
-    
-    public void showOp(DigitoOperador op)
-    {
-        System.out.printf("%c", (op.toChar));
-    }
-    
-    public void showDigit(DigitoNumerico digit)
-	{
-	System.out.printf("%d",(digit.toInt));        
-    }
-    
-    public void clear() throws IOException
-	{
-        Runtime.getRuntime().exec("clear");
-    }
+public interface Tela {
 
-    void start() throws IOException {
-	this.clear();
-	System.out.printf("Tela iniciada!\n");
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    void clear() throws IOException;
+
+    void showDigit(DigitoNumerico digit);
+
+    void showOp(DigitoOperador op);
+    
 }

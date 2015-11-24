@@ -6,35 +6,35 @@
 
 package calculadoraoo;
 
+import java.io.IOException;
+
 /**
  *
  * @author lgvalentin
  */
-public class Tela2 extends TelaImpl{
+public class TelaImpl implements Tela {
+    
+    @Override
+    public void showOp(DigitoOperador op)
+    {
+        System.out.printf("%c", (op.toChar));
+    }
     
     @Override
     public void showDigit(DigitoNumerico digit)
 	{
-		char charprint;
-	charprint = (char)(digit.toInt + '0');
-	      Printchar(charprint);
+	System.out.printf("%d",(digit.toInt));        
     }
-   
-	public void Printchar(char c)
-	{
-		System.out.printf("%c",(c));
-	} 
-
+    
     @Override
-    public void clear()
+    public void clear() throws IOException
 	{
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        Runtime.getRuntime().exec("clear");
     }
 
-    @Override
-    void start() {
+    void start() throws IOException {
 	this.clear();
-	System.out.printf("Tela iniciada!,\n");
+	System.out.printf("Tela iniciada!\n");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
