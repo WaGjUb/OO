@@ -6,23 +6,30 @@
 
 package calculadoraoo;
 
+import java.io.IOException;
+
 /**
  *
  * @author lgvalentin
  */
 public class Tela {
     
-    public void showDigit(DigitoNumerico digit)
-	{
-	System.out.printf("%d",(digit));        
+    public void showOp(DigitoOperador op)
+    {
+        System.out.printf("%c", (op.toChar));
     }
     
-    public void clear()
+    public void showDigit(DigitoNumerico digit)
+	{
+	System.out.printf("%d",(digit.toInt));        
+    }
+    
+    public void clear() throws IOException
 	{
         Runtime.getRuntime().exec("clear");
     }
 
-    void start() {
+    void start() throws IOException {
 	this.clear();
 	System.out.printf("Tela iniciada!\n");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

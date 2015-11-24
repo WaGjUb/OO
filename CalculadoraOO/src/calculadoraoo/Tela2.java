@@ -10,12 +10,13 @@ package calculadoraoo;
  *
  * @author lgvalentin
  */
-public class Tela {
+public class Tela2 extends Tela{
     
+    @Override
     public void showDigit(DigitoNumerico digit)
 	{
 		char charprint;
-	charprint = digit.ToString;
+	charprint = (char)(digit.toInt + '0');
 	      Printchar(charprint);
     }
    
@@ -24,14 +25,16 @@ public class Tela {
 		System.out.printf("%c",(c));
 	} 
 
+    @Override
     public void clear()
 	{
-        Runtime.getRuntime().exec("clear");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 
+    @Override
     void start() {
 	this.clear();
-	System.out.printf("Tela iniciada!\n");
+	System.out.printf("Tela iniciada!,\n");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

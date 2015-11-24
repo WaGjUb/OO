@@ -23,4 +23,21 @@ public enum DigitoOperador {
 	this.toChar = c;
         this.operacao = op;
     }
+    
+    public DigitoOperador RetornaOperacao(char c)
+    {
+        switch (c)
+                {
+            case '+':
+                return(D_SOMA);
+            case '-':
+                return(D_SUBTRACAO);
+            case '/':
+                    return(D_DIVISAO);
+            case '*':
+                return(D_MULTIPLICACAO);
+            default:
+                return(null);
+        }
+    }
 }

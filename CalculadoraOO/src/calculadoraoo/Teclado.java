@@ -6,23 +6,35 @@
 
 package calculadoraoo;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  *
  * @author lgvalentin
  */
 public class Teclado {
 
+    private CalculadoraOO calc;
+    
 	public Teclado()
 
 	{
-
+         
 	}
 
-	private boolean isDigit(char c)
+	private boolean isDigit(String c)
 	{
+          int aux;                
+                try {
+                    aux = Integer.parseInt(c);
+                } catch (NumberFormatException e)
+                {
+                    return false;
+                }
 		for(DigitoNumerico digito : DigitoNumerico.values())
 		{
-			if (digito == c)
+			if (digito.toInt == aux)
 			{
 				return true;
 			}
@@ -33,49 +45,58 @@ public class Teclado {
 
 	private boolean isOp(char c)
 	{
-		for(DigitoOperador digito : DigitoOperador.values())
-		{
-			if (digito.ToChar == c)
-			{
+               for (DigitoOperador d : DigitoOperador.values())
+                {
+                    if (d.toChar == c){
+                  
 				return true;
 			}
-		}
+                }
+       	 
 	return false;
 	}
 
-	public void sendDigit(char val)
+	public void sendDigit(DigitoNumerico d) throws IOException
 	{
-		calc.newDigit(val);
+		calc.newDigit(d);
+        }
+	public void newOp(DigitoOperador dop)
+	{
+		calc.sendOp(dop);
 	}
 
-	public void sendOp(char val)
-	{
-		calc.newOp(val);
-	}
-
-	public void start(CalculadoraOO dono){
+	public void start(CalculadoraOO dono) throws IOException{
+                calc = dono;
 		Scanner reader = new Scanner(System.in); //cria o scan para leitura
-		while (dono != null)
+    		while (dono != null)
 		{     
-			char c = reader.next().charArt(0);
+			char c = (char)System.in.read();
 
-			boolean dverifc = false;
+			boolean dverific = false;
 			boolean overific = false;
 
-			dverifc = this.isDigit(c); //corrigir
+			dverific = this.isDigit(String.valueOf(c)); //corrigir
 			overific = this.isOp(c); //corrigir
 
-			if ((overific == true) || (dverific == true))
+			if (dverific == true)
 			{
-				this.sendDigit(c);
+    
+				this.sendDigit(DigitoNumerico.D0.Conversao((int)Character.getNumericValue(c)));
 				dverific = false;
 			}
 		
 			if (overific == true)
 			{
-				this.sendOp(c);
+                               
+                                
+                                    this.newOp(DigitoOperador.D_SOMA.RetornaOperacao(c));
 				overific = false;
 			}
+                        
+                        if (c == '=')
+                        {
+                            calc.sendEqual();
+                        }
 		}
 	}
 
