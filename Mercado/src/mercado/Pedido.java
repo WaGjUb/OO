@@ -11,16 +11,17 @@ package mercado;
  */
 public class Pedido {
     
-    private final Carrinho carrinho;
+    private final Carrinho car;
     private final Cliente cliente;
     private final Mercado mercado;
     
-    public Pedido (Carrinho car, Cliente cli, Mercado mercado)
+    public Pedido (Cliente cli, Mercado mercado)
     {
-       this.carrinho = car;
+       this.car = new Carrinho();
        this.cliente = cli;
        this.mercado = mercado;
     }
+    
     
 
     Carrinho getCarrinho()
@@ -37,4 +38,4 @@ public class Pedido {
     
     
 }
-}
+

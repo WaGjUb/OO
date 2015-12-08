@@ -15,7 +15,7 @@ import java.util.ArrayList;
 //acabado
 public class Carrinho {
     
-    private final ArrayList<Produtos> produtos;
+    public final ArrayList<Produtos> produtos;
          
     public Carrinho()
             {

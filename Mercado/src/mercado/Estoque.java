@@ -18,7 +18,7 @@ public class Estoque {
     private final ArrayList<Integer> quantidade;
     private final ArrayList<Float> preco;
     
-    public Estoque(ArrayList<Produtos> produto)
+    public Estoque()
     {
         this.preco = new ArrayList<>();
         this.quantidade = new ArrayList<>();

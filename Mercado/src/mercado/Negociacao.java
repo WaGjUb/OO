@@ -9,9 +9,26 @@ package mercado;
  *
  * @author wagjub
  */
+
+//essa classe é basicamente um gerenciador de transações
+ 
 public class Negociacao {
     
-    void sendPedido(Pedido p)
+    public Cliente cliente;
+    public Mercado mercado;
+    public Pedido p;
+    
+    Negociacao(Cliente c, Mercado m)
+    {
+        this.cliente = c;
+        this.mercado = m;
+        p = new Pedido(cliente, mercado);
+         
+    }
+    
+    
+    
+    void sendPedido()
     {
         
     }
