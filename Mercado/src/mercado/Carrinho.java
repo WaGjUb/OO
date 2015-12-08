@@ -19,7 +19,7 @@ public class Carrinho {
          
     public Carrinho()
             {
-                this.produtos = new ArrayList<ProdutoMercado>();
+                this.produtos =  new ArrayList<ProdutoMercado>();
             }
     
    
@@ -32,7 +32,6 @@ public class Carrinho {
     {
         this.produtos.add(p);
     }
-    
     
      
 }

@@ -27,14 +27,8 @@ public class TelaMercado{
                                  */
        System.out.printf("Cliente:%s\nEmail: %s\n\nCidade: %s\nRua: %s\nNumero: %d\n\n", c.nome, c.email, c.endereco.cidade, c.endereco.rua, c.endereco.numero);
        System.out.printf("Produtos:\n");
-       
-     
-       Produtos p;
-     
-        ArrayList<ProdutoMercado> produto = car.produtos;
-       
 
-            System.out.println("dois");
+            System.out.println("Nome: Produto1\nQuantidade: 5");
         }
     }
     

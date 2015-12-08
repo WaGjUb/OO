@@ -5,7 +5,6 @@
  */
 package mercado;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -34,7 +33,6 @@ public class MainTeste {
         Negociacao n = new Negociacao(cliente, mercado); //aqui eu crio uma negociação e faço uma compra
         n.addProduto(pm1);
         n.addProduto(pm2);
-         ArrayList<ProdutoMercado> produtinhos = n.p.carrinho.produtos;
         n.finalizarCompra();     
     }
     
