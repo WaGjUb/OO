@@ -13,7 +13,7 @@ package mercado;
 //acabado;
 public class Cliente {
     
-    private Contato contato;
+    Contato contato;
         
     public Cliente(Contato contato){
         this.contato = contato;

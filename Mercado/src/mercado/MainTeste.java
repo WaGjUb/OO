@@ -5,6 +5,8 @@
  */
 package mercado;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author wagjub
@@ -29,19 +31,11 @@ public class MainTeste {
         estoque.addProdutoEstoque(pm2, 10, (float) 11.90);
         Mercado mercado = new Mercado(c2, estoque); //cria mercado
         
-        Negociacao n = new Negociacao(cliente, mercado);
-        
-       
-        car.addProduto(car, pm1);
-        
- 
-
-        
-        
-        p.sendPedido();
-        
-        
-        
+        Negociacao n = new Negociacao(cliente, mercado); //aqui eu crio uma negociação e faço uma compra
+        n.addProduto(pm1);
+        n.addProduto(pm2);
+         ArrayList<ProdutoMercado> produtinhos = n.p.carrinho.produtos;
+        n.finalizarCompra();     
     }
     
 }

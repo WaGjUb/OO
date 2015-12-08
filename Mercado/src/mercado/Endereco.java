@@ -19,12 +19,12 @@ public class Endereco {
         this.rua = rua;
         this.numero = numero;
     }
-    
-    private final String estado;
-    private final String cidade;
-    private final String bairro;
-    private final String rua;
-    private final int numero;
+    // protegido para exibiçao na tela
+    protected final String estado;
+    protected final String cidade;
+    protected final String bairro;
+    protected final String rua;
+    protected final int numero;
 
     Endereco() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -11,28 +11,41 @@ package mercado;
  */
 public class Pedido {
     
-    private final Carrinho car;
-    private final Cliente cliente;
-    private final Mercado mercado;
+    private Carrinho car;
+    public Cliente cliente;
+    private Mercado mercado;
+    private  boolean status;
+    public Carrinho carrinho;
     
     public Pedido (Cliente cli, Mercado mercado)
     {
        this.car = new Carrinho();
        this.cliente = cli;
        this.mercado = mercado;
+       this.status = false; //indica que nao foi finalizado
     }
     
-    
+    void AddProdutoCarrinho (ProdutoMercado prod)
+    {
+        this.car.addProduto(prod);
+    }
 
     Carrinho getCarrinho()
     {
-        return this.carrinho;
+        return this.car;
+    }
+    
+    Cliente getCliente()
+    {
+        return this.cliente;
     }
     
     void sendPedido()
     {
-        
+        this.status = true;
+        mercado.novoPedido(this);
     }
+
     
             
     

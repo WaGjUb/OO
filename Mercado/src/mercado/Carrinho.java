@@ -15,11 +15,11 @@ import java.util.ArrayList;
 //acabado
 public class Carrinho {
     
-    public final ArrayList<Produtos> produtos;
+    public ArrayList<ProdutoMercado> produtos;
          
     public Carrinho()
             {
-                this.produtos = new ArrayList<>();
+                this.produtos = new ArrayList<ProdutoMercado>();
             }
     
    
@@ -28,9 +28,9 @@ public class Carrinho {
         return ((float)110.50);
     } 
     
-    void addProduto(Carrinho c, Produtos p)
+    void addProduto(ProdutoMercado p)
     {
-        c.produtos.add(p);
+        this.produtos.add(p);
     }
     
     

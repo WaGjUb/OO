@@ -18,9 +18,9 @@ public class Contato {
         this.endereco = endereco;
     }
     
-    private final String nome;
-    private final String email;
-    private final Endereco endereco;
+    protected final String nome;
+    protected final String email;
+    protected final Endereco endereco;
 
     Contato() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

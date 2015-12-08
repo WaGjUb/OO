@@ -26,16 +26,17 @@ public class Negociacao {
          
     }
     
-    
-    
-    void sendPedido()
+    void addProduto(ProdutoMercado produto)
     {
-        
+        p.AddProdutoCarrinho(produto);
     }
     
-   void finalizarCompra(Pedido p)
+    
+   void finalizarCompra()
     {
-        sendPedido(p);
+        //criar metodo que muda a interface para que o usuario nao possa add ou remover mais nada
+        p.sendPedido();
+        
         
         
     }
